@@ -3,18 +3,17 @@ put the gtFine foler and the leftImg8bit here!
 example:
 
 gtFine
-
  -test
-  -bonn
   -berlin
+  -bielefeld
   ...
   
  -train
   -(included fine labeled and extra)
-  -jena
-  -wuppertal
-  ...
   -aachen
+  -augsburg
+  -bad-honnef
+  -bochum
   ...
   
  -val
@@ -24,12 +23,16 @@ gtFine
 
 
 leftImg8bit
-
- -train
-  -jena
-  -wuppertal
+ -test
+  -berlin
+  -bielefeld
   ...
+  
+ -train
   -aachen
+  -augsburg
+  -bad-honnef
+  -bochum
   ...
   
  -val
