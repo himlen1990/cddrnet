@@ -13,9 +13,9 @@ This is the official repository for CDDRNet. The code is modified based on [HRNe
 
 ### 0. Dataset
 - (Cityscapes) Download the [Cityscapes](https://www.cityscapes-dataset.com/) dataset, including gtFine (gtFine_trainvaltest.zip (241MB) + leftImg8bit_trainvaltest.zip (11GB)) and extra(leftImg8bit_trainextra.zip (44GB) + label generated from HRNet-Semantic-Segmentation [Download Link](https://drive.google.com/file/d/1zFH-COPzcFf-_khv_gUgELBiC-TfJwwH/view?usp=drive_link))
-- (CamVid) Download the [CamVid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/) dataset. including original images/labels and extra images (gtFine of Cityscapes) + labels [Download Link](https://drive.google.com/file/d/1kXzIxxmlKT2qj9fA-jEVzFskbdtbA9RH/view?usp=drive_link).
-- You can also train the network without extra data. In this case, you will get a lower MIoU. (also train with the no_extra_train.lst in data/list/camvid and data/list/cityscapes)
-- If you got an error while training, check if the paths contained in lists of `data/list` are correct for dataset images.
+- (CamVid) Download the [CamVid](http://mi.eng.cam.ac.uk/research/projects/VideoRec/CamVid/) dataset. including original images/labels and extra images (gtFine of Cityscapes) + labels [Download Link](https://drive.google.com/file/d/1kXzIxxmlKT2qj9fA-jEVzFskbdtbA9RH/view?usp=drive_link). Notice that the Camvid labels are processed for accelerating the training speed. An example of converting the original label to process label is utils/generate_camvid_train_labels.py.
+- You can also train the network without extra data. In this case, you will get a lower MIoU. (also  modify the TRAIN_SET path in experiments/cityscapes and set to no_extra_train.lst in data/list/camvid and data/list/cityscapes)
+- If you got errors while training, check image paths listed in `data/list` first.
 
 ### 1. Train
 ````bash
