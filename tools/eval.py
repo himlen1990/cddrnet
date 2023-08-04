@@ -1,9 +1,3 @@
-# ------------------------------------------------------------------------------
-# Copyright (c) Microsoft
-# Licensed under the MIT License.
-# Written by Ke Sun (sunk@mail.ustc.edu.cn)
-# ------------------------------------------------------------------------------
-
 import argparse
 import os
 import pprint
@@ -35,7 +29,7 @@ def parse_args():
     
     parser.add_argument('--cfg',
                         help='experiment configure file name',
-                        default="experiments/cityscapes/ddrnet23_slim.yaml",
+                        default="experiments/cityscapes/cddrnet.yaml",
                         type=str)
     parser.add_argument('opts',
                         help="Modify config options using the command-line",

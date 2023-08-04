@@ -27,6 +27,12 @@ python -m torch.distributed.launch --nproc_per_node=2 tools/train.py --cfg exper
 ### 2. Eval
 TODO
 
+### 3. Speed Test
+````bash
+cd utils/speed_test/
+python cddrnet_eval_speed.py
+````
+
 
 ### Troubleshooting
 (Train in a Server)Import cv2 error: libGL.so.1: cannot open shared object file: No such file or directory
