@@ -25,7 +25,10 @@ python -m torch.distributed.launch --nproc_per_node=2 tools/train.py --cfg exper
 ````
 
 ### 2. Eval
-TODO
+````bash
+python tools/eval.py --cfg experiments/camvid/cddrnet.yaml
+python tools/eval.py --cfg experiments/cityscapes/cddrnet.yaml
+````
 
 ### 3. Speed Test
 ````bash

@@ -177,7 +177,7 @@ class CompactDualResNet(nn.Module):
             return x_      
 
 def get_seg_model(cfg, **kwargs):
-    model = CompactDualResNet(BasicBlock, [2, 2, 2, 2], num_classes=19, planes=32, spp_planes=128, head_planes=64, augment=True)
+    model = CompactDualResNet(BasicBlock, [2, 2, 2, 2], num_classes=cfg.DATASET.NUM_CLASSES, planes=32, spp_planes=128, head_planes=64, augment=True)
     return model
 
 
@@ -186,3 +186,5 @@ if __name__ == '__main__':
     net = CompactDualResNet(BasicBlock, [2, 2, 2, 2], num_classes=19, planes=32, spp_planes=128, head_planes=64, augment=True)
     y = net(x)
     print(y.shape)
+
+
