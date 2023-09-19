@@ -1,0 +1,479 @@
+2023-09-19 14:39:42,412 Namespace(cfg='experiments/camvid/cddrnet.yaml', opts=[])
+2023-09-19 14:39:42,412 {'AUTO_RESUME': False,
+ 'CUDNN': CfgNode({'BENCHMARK': True, 'DETERMINISTIC': False, 'ENABLED': True}),
+ 'DATASET': {'DATASET': 'camvid',
+             'EXTRA_TRAIN_SET': '',
+             'MODEL': 'train',
+             'NUM_CLASSES': 11,
+             'ROOT': 'data/',
+             'TEST_SET': 'list/camvid/test.lst',
+             'TRAIN_SET': 'list/camvid/trainval.lst'},
+ 'DEBUG': {'DEBUG': False,
+           'SAVE_BATCH_IMAGES_GT': False,
+           'SAVE_BATCH_IMAGES_PRED': False,
+           'SAVE_HEATMAPS_GT': False,
+           'SAVE_HEATMAPS_PRED': False},
+ 'GPUS': (0,),
+ 'LOG_DIR': 'log',
+ 'LOSS': {'BALANCE_WEIGHTS': [1, 0.4],
+          'CLASS_BALANCE': False,
+          'OHEMKEEP': 131072,
+          'OHEMTHRES': 0.9,
+          'USE_OHEM': True},
+ 'MODEL': {'ALIGN_CORNERS': False,
+           'EXTRA': CfgNode({}),
+           'NAME': 'cddrnet',
+           'NUM_OUTPUTS': 2,
+           'OCR': {'DROPOUT': 0.05,
+                   'KEY_CHANNELS': 256,
+                   'MID_CHANNELS': 512,
+                   'SCALE': 1},
+           'PRETRAINED': ''},
+ 'OUTPUT_DIR': 'output',
+ 'PIN_MEMORY': True,
+ 'PRINT_FREQ': 10,
+ 'RANK': 0,
+ 'TEST': {'BASE_SIZE': 960,
+          'BATCH_SIZE_PER_GPU': 2,
+          'FLIP_TEST': False,
+          'IMAGE_SIZE': [960, 720],
+          'MODEL_FILE': 'pretrained_models/camvid_best.pth',
+          'MULTI_SCALE': False,
+          'NUM_SAMPLES': 0,
+          'OUTPUT_INDEX': 1,
+          'SCALE_LIST': [1]},
+ 'TRAIN': {'BASE_SIZE': 960,
+           'BATCH_SIZE_PER_GPU': 4,
+           'BEGIN_EPOCH': 0,
+           'DOWNSAMPLERATE': 1,
+           'END_EPOCH': 960,
+           'EXTRA_EPOCH': 0,
+           'EXTRA_LR': 0.001,
+           'FLIP': True,
+           'FREEZE_EPOCHS': -1,
+           'FREEZE_LAYERS': '',
+           'IGNORE_LABEL': 255,
+           'IMAGE_SIZE': [960, 720],
+           'LR': 0.01,
+           'LR_FACTOR': 0.1,
+           'LR_STEP': [60, 80],
+           'MOMENTUM': 0.9,
+           'MULTI_SCALE': True,
+           'NESTEROV': False,
+           'NONBACKBONE_KEYWORDS': [],
+           'NONBACKBONE_MULT': 10,
+           'NUM_SAMPLES': 0,
+           'OPTIMIZER': 'sgd',
+           'RANDOM_BRIGHTNESS': False,
+           'RANDOM_BRIGHTNESS_SHIFT_VALUE': 10,
+           'RESUME': False,
+           'SCALE_FACTOR': 16,
+           'SHUFFLE': True,
+           'WD': 0.0005},
+ 'WORKERS': 4}
+2023-09-19 14:39:42,476 => loading model from pretrained_models/camvid_best.pth
+2023-09-19 14:39:44,593 => loading conv1.0.weight from pretrained model
+2023-09-19 14:39:44,593 => loading conv1.0.bias from pretrained model
+2023-09-19 14:39:44,593 => loading conv1.1.weight from pretrained model
+2023-09-19 14:39:44,593 => loading conv1.1.bias from pretrained model
+2023-09-19 14:39:44,593 => loading conv1.1.running_mean from pretrained model
+2023-09-19 14:39:44,593 => loading conv1.1.running_var from pretrained model
+2023-09-19 14:39:44,593 => loading conv1.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,593 => loading conv1.3.weight from pretrained model
+2023-09-19 14:39:44,594 => loading conv1.3.bias from pretrained model
+2023-09-19 14:39:44,594 => loading conv1.4.weight from pretrained model
+2023-09-19 14:39:44,594 => loading conv1.4.bias from pretrained model
+2023-09-19 14:39:44,594 => loading conv1.4.running_mean from pretrained model
+2023-09-19 14:39:44,594 => loading conv1.4.running_var from pretrained model
+2023-09-19 14:39:44,594 => loading conv1.4.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.conv1.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn1.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn1.bias from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn1.running_var from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.conv2.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn2.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn2.bias from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn2.running_var from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.0.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.conv1.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn1.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn1.bias from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn1.running_var from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.conv2.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn2.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn2.bias from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn2.running_var from pretrained model
+2023-09-19 14:39:44,594 => loading layer1.1.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,594 => loading layer2.0.conv1.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer2.0.bn1.weight from pretrained model
+2023-09-19 14:39:44,594 => loading layer2.0.bn1.bias from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.bn1.running_var from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.conv2.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.bn2.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.bn2.bias from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.bn2.running_var from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.downsample.0.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.downsample.1.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.downsample.1.bias from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.downsample.1.running_mean from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.downsample.1.running_var from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.0.downsample.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.conv1.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn1.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn1.bias from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn1.running_var from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.conv2.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn2.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn2.bias from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn2.running_var from pretrained model
+2023-09-19 14:39:44,595 => loading layer2.1.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,595 => loading layer3.0.conv1.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer3.0.bn1.weight from pretrained model
+2023-09-19 14:39:44,595 => loading layer3.0.bn1.bias from pretrained model
+2023-09-19 14:39:44,595 => loading layer3.0.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,595 => loading layer3.0.bn1.running_var from pretrained model
+2023-09-19 14:39:44,595 => loading layer3.0.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.conv2.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.bn2.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.bn2.bias from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.bn2.running_var from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.downsample.0.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.downsample.1.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.downsample.1.bias from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.downsample.1.running_mean from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.downsample.1.running_var from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.0.downsample.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.conv1.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn1.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn1.bias from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn1.running_var from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.conv2.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn2.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn2.bias from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn2.running_var from pretrained model
+2023-09-19 14:39:44,596 => loading layer3.1.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.0.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.1.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.1.bias from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.1.running_mean from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.1.running_var from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.3.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.4.weight from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.4.bias from pretrained model
+2023-09-19 14:39:44,596 => loading layer4.0.primary_conv.4.running_mean from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.primary_conv.4.running_var from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.primary_conv.4.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.0.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.1.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.1.bias from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.1.running_mean from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.1.running_var from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.2.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.3.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.3.bias from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.3.running_mean from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.3.running_var from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.cheap_operation.3.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.downsample.0.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.downsample.1.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.downsample.1.bias from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.downsample.1.running_mean from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.downsample.1.running_var from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.0.downsample.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.0.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.1.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.1.bias from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.1.running_mean from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.1.running_var from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.3.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.4.weight from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.4.bias from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.4.running_mean from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.4.running_var from pretrained model
+2023-09-19 14:39:44,597 => loading layer4.1.primary_conv.4.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.0.weight from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.1.weight from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.1.bias from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.1.running_mean from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.1.running_var from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.2.weight from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.3.weight from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.3.bias from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.3.running_mean from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.3.running_var from pretrained model
+2023-09-19 14:39:44,598 => loading layer4.1.cheap_operation.3.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,598 => loading compression3.0.weight from pretrained model
+2023-09-19 14:39:44,598 => loading compression3.1.weight from pretrained model
+2023-09-19 14:39:44,598 => loading compression3.1.bias from pretrained model
+2023-09-19 14:39:44,598 => loading compression3.1.running_mean from pretrained model
+2023-09-19 14:39:44,598 => loading compression3.1.running_var from pretrained model
+2023-09-19 14:39:44,598 => loading compression3.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,598 => loading compression4.0.weight from pretrained model
+2023-09-19 14:39:44,598 => loading compression4.1.weight from pretrained model
+2023-09-19 14:39:44,598 => loading compression4.1.bias from pretrained model
+2023-09-19 14:39:44,598 => loading compression4.1.running_mean from pretrained model
+2023-09-19 14:39:44,598 => loading compression4.1.running_var from pretrained model
+2023-09-19 14:39:44,598 => loading compression4.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,598 => loading down3.0.weight from pretrained model
+2023-09-19 14:39:44,598 => loading down3.1.weight from pretrained model
+2023-09-19 14:39:44,598 => loading down3.1.bias from pretrained model
+2023-09-19 14:39:44,598 => loading down3.1.running_mean from pretrained model
+2023-09-19 14:39:44,598 => loading down3.1.running_var from pretrained model
+2023-09-19 14:39:44,598 => loading down3.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,598 => loading down4.0.weight from pretrained model
+2023-09-19 14:39:44,598 => loading down4.1.weight from pretrained model
+2023-09-19 14:39:44,599 => loading down4.1.bias from pretrained model
+2023-09-19 14:39:44,599 => loading down4.1.running_mean from pretrained model
+2023-09-19 14:39:44,599 => loading down4.1.running_var from pretrained model
+2023-09-19 14:39:44,599 => loading down4.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,599 => loading down4.3.weight from pretrained model
+2023-09-19 14:39:44,599 => loading down4.4.weight from pretrained model
+2023-09-19 14:39:44,599 => loading down4.4.bias from pretrained model
+2023-09-19 14:39:44,599 => loading down4.4.running_mean from pretrained model
+2023-09-19 14:39:44,599 => loading down4.4.running_var from pretrained model
+2023-09-19 14:39:44,599 => loading down4.4.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.conv1.weight from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn1.weight from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn1.bias from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn1.running_var from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.conv2.weight from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn2.weight from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn2.bias from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn2.running_var from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.0.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.conv1.weight from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.bn1.weight from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.bn1.bias from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.bn1.running_var from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.conv2.weight from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.bn2.weight from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.bn2.bias from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,599 => loading layer3_.1.bn2.running_var from pretrained model
+2023-09-19 14:39:44,600 => loading layer3_.1.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.conv1.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn1.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn1.bias from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn1.running_var from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.conv2.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn2.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn2.bias from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn2.running_var from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.0.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.conv1.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn1.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn1.bias from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn1.running_var from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.conv2.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn2.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn2.bias from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn2.running_var from pretrained model
+2023-09-19 14:39:44,600 => loading layer4_.1.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,600 => loading layer5_.0.ghost1.primary_conv.0.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer5_.0.ghost1.primary_conv.1.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer5_.0.ghost1.primary_conv.1.bias from pretrained model
+2023-09-19 14:39:44,600 => loading layer5_.0.ghost1.primary_conv.1.running_mean from pretrained model
+2023-09-19 14:39:44,600 => loading layer5_.0.ghost1.primary_conv.1.running_var from pretrained model
+2023-09-19 14:39:44,600 => loading layer5_.0.ghost1.primary_conv.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,600 => loading layer5_.0.ghost1.cheap_operation.0.weight from pretrained model
+2023-09-19 14:39:44,600 => loading layer5_.0.ghost1.cheap_operation.1.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost1.cheap_operation.1.bias from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost1.cheap_operation.1.running_mean from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost1.cheap_operation.1.running_var from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost1.cheap_operation.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.primary_conv.0.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.primary_conv.1.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.primary_conv.1.bias from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.primary_conv.1.running_mean from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.primary_conv.1.running_var from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.primary_conv.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.cheap_operation.0.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.cheap_operation.1.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.cheap_operation.1.bias from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.cheap_operation.1.running_mean from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.cheap_operation.1.running_var from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.ghost2.cheap_operation.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.0.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.1.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.1.bias from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.1.running_mean from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.1.running_var from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.2.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.3.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.3.bias from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.3.running_mean from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.3.running_var from pretrained model
+2023-09-19 14:39:44,601 => loading layer5_.0.shortcut.3.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,601 => loading layer5.0.ghost1.primary_conv.0.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5.0.ghost1.primary_conv.1.weight from pretrained model
+2023-09-19 14:39:44,601 => loading layer5.0.ghost1.primary_conv.1.bias from pretrained model
+2023-09-19 14:39:44,601 => loading layer5.0.ghost1.primary_conv.1.running_mean from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost1.primary_conv.1.running_var from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost1.primary_conv.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost1.cheap_operation.0.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost1.cheap_operation.1.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost1.cheap_operation.1.bias from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost1.cheap_operation.1.running_mean from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost1.cheap_operation.1.running_var from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost1.cheap_operation.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.primary_conv.0.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.primary_conv.1.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.primary_conv.1.bias from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.primary_conv.1.running_mean from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.primary_conv.1.running_var from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.primary_conv.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.cheap_operation.0.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.cheap_operation.1.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.cheap_operation.1.bias from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.cheap_operation.1.running_mean from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.cheap_operation.1.running_var from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.ghost2.cheap_operation.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.0.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.1.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.1.bias from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.1.running_mean from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.1.running_var from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.2.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.3.weight from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.3.bias from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.3.running_mean from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.3.running_var from pretrained model
+2023-09-19 14:39:44,602 => loading layer5.0.shortcut.3.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale1.1.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale1.1.bias from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale1.1.running_mean from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale1.1.running_var from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale1.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale1.3.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale2.1.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale2.1.bias from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale2.1.running_mean from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale2.1.running_var from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale2.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale2.3.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale3.1.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale3.1.bias from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale3.1.running_mean from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale3.1.running_var from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale3.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale3.3.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale4.1.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale4.1.bias from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale4.1.running_mean from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale4.1.running_var from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale4.1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale4.3.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale0.0.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale0.0.bias from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale0.0.running_mean from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale0.0.running_var from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale0.0.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,603 => loading spp.scale0.2.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.process1.0.weight from pretrained model
+2023-09-19 14:39:44,603 => loading spp.process1.0.bias from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process1.0.running_mean from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process1.0.running_var from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process1.0.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process1.2.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process2.0.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process2.0.bias from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process2.0.running_mean from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process2.0.running_var from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process2.0.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process2.2.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process3.0.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process3.0.bias from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process3.0.running_mean from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process3.0.running_var from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process3.0.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process3.2.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process4.0.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process4.0.bias from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process4.0.running_mean from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process4.0.running_var from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process4.0.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,604 => loading spp.process4.2.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.compression.0.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.compression.0.bias from pretrained model
+2023-09-19 14:39:44,604 => loading spp.compression.0.running_mean from pretrained model
+2023-09-19 14:39:44,604 => loading spp.compression.0.running_var from pretrained model
+2023-09-19 14:39:44,604 => loading spp.compression.0.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,604 => loading spp.compression.2.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.shortcut.0.weight from pretrained model
+2023-09-19 14:39:44,604 => loading spp.shortcut.0.bias from pretrained model
+2023-09-19 14:39:44,604 => loading spp.shortcut.0.running_mean from pretrained model
+2023-09-19 14:39:44,604 => loading spp.shortcut.0.running_var from pretrained model
+2023-09-19 14:39:44,605 => loading spp.shortcut.0.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,605 => loading spp.shortcut.2.weight from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn1.weight from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn1.bias from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn1.running_var from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.conv1.weight from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn2.weight from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn2.bias from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn2.running_var from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.conv2.weight from pretrained model
+2023-09-19 14:39:44,605 => loading seghead_extra.conv2.bias from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn1.weight from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn1.bias from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn1.running_mean from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn1.running_var from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn1.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.conv1.weight from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn2.weight from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn2.bias from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn2.running_mean from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn2.running_var from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.bn2.num_batches_tracked from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.conv2.weight from pretrained model
+2023-09-19 14:39:44,605 => loading final_layer.conv2.bias from pretrained model
+2023-09-19 14:39:45,460 processing: 0 images
+2023-09-19 14:39:45,460 mIoU: 0.7120
+2023-09-19 14:39:56,820 processing: 100 images
+2023-09-19 14:39:56,820 mIoU: 0.7935
+2023-09-19 14:40:08,296 processing: 200 images
+2023-09-19 14:40:08,296 mIoU: 0.8048
+2023-09-19 14:40:11,973 MeanIU:  0.8004, Pixel_Acc:  0.9512,         Mean_Acc:  0.8604, Class IoU: 
+2023-09-19 14:40:11,973 [0.77376319 0.91675201 0.95224679 0.45988916 0.74091624 0.75842374
+ 0.96810201 0.90675213 0.58936584 0.92511452 0.81335734]
+2023-09-19 14:40:11,974 Mins: 0
+2023-09-19 14:40:11,974 Done
